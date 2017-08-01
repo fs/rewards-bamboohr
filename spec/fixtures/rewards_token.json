@@ -1,0 +1,9 @@
+{
+    "data": {
+        "attributes": {
+            "token": "token-id"
+        },
+        "id": "jwt-token",
+        "type": "jwt-tokens"
+    }
+}

@@ -1,9 +1,0 @@
-{
-    "data": {
-        "id": "bot-bonus-request",
-        "type": "bot-bonus-requests",
-        "attributes": {
-            "text": "Testing bots +100 @john.doe #be-curious-never-stop-learning"
-        }
-    }
-}
