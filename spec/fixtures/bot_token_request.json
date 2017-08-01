@@ -1,0 +1,10 @@
+{
+    "data": {
+        "id": "bot-token-request",
+        "type": "bot-token-requests",
+        "attributes": {
+            "name": "birthday",
+            "password": "123456"
+        }
+    }
+}

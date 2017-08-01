@@ -1,0 +1,23 @@
+{
+  "data":
+  [{
+    "id":"1",
+    "type":"users",
+    "attributes":
+      {
+        "email":"john.doe@example.com",
+        "full-name":"John Doe",
+        "username":"john.doe"
+      }
+  },
+  {
+    "id":"2",
+    "type":"users",
+    "attributes":
+      {
+        "email":"john.smith@example.com",
+        "full-name":"John Smith",
+        "username":"john.smith"
+      }
+  }]
+}

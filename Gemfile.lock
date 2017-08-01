@@ -1,15 +1,103 @@
+GIT
+  remote: https://github.com/fs/rewards-ruby.git
+  revision: ec5333d10aa05190af814660f04b75a032b5ef39
+  specs:
+    rewards-ruby (0.0.1)
+      active_model_serializers
+      httparty
+
 GEM
   remote: https://rubygems.org/
   specs:
+    actionpack (5.1.2)
+      actionview (= 5.1.2)
+      activesupport (= 5.1.2)
+      rack (~> 2.0)
+      rack-test (~> 0.6.3)
+      rails-dom-testing (~> 2.0)
+      rails-html-sanitizer (~> 1.0, >= 1.0.2)
+    actionview (5.1.2)
+      activesupport (= 5.1.2)
+      builder (~> 3.1)
+      erubi (~> 1.4)
+      rails-dom-testing (~> 2.0)
+      rails-html-sanitizer (~> 1.0, >= 1.0.3)
+    active_model_serializers (0.10.6)
+      actionpack (>= 4.1, < 6)
+      activemodel (>= 4.1, < 6)
+      case_transform (>= 0.2)
+      jsonapi-renderer (>= 0.1.1.beta1, < 0.2)
+    activemodel (5.1.2)
+      activesupport (= 5.1.2)
+    activesupport (5.1.2)
+      concurrent-ruby (~> 1.0, >= 1.0.2)
+      i18n (~> 0.7)
+      minitest (~> 5.1)
+      tzinfo (~> 1.1)
+    addressable (2.5.1)
+      public_suffix (~> 2.0, >= 2.0.2)
     ast (2.3.0)
+    bamboozled (0.1.0)
+      activesupport
+      httparty (~> 0.13)
+      json (~> 1.8)
+    builder (3.2.3)
     bundler-audit (0.5.0)
       bundler (~> 1.2)
       thor (~> 0.18)
+    byebug (9.0.6)
+    case_transform (0.2)
+      activesupport
+    coderay (1.1.1)
+    concurrent-ruby (1.0.5)
+    crack (0.4.3)
+      safe_yaml (~> 1.0.0)
     diff-lcs (1.2.5)
+    dotenv (2.2.1)
+    dotenv-rails (2.2.1)
+      dotenv (= 2.2.1)
+      railties (>= 3.2, < 5.2)
+    erubi (1.6.1)
+    hashdiff (0.3.4)
+    httparty (0.15.5)
+      multi_xml (>= 0.5.2)
+    i18n (0.8.6)
+    json (1.8.6)
+    jsonapi-renderer (0.1.3)
+    loofah (2.0.3)
+      nokogiri (>= 1.5.9)
+    method_source (0.8.2)
+    mini_portile2 (2.2.0)
+    minitest (5.10.2)
+    multi_xml (0.6.0)
+    nokogiri (1.8.0)
+      mini_portile2 (~> 2.2.0)
     parser (2.3.1.2)
       ast (~> 2.2)
     powerpack (0.1.1)
+    pry (0.10.4)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
+    pry-rails (0.3.6)
+      pry (>= 0.10.4)
+    public_suffix (2.0.5)
+    rack (2.0.3)
+    rack-test (0.6.3)
+      rack (>= 1.0)
+    rails-dom-testing (2.0.3)
+      activesupport (>= 4.2.0)
+      nokogiri (>= 1.6)
+    rails-html-sanitizer (1.0.3)
+      loofah (~> 2.0)
+    railties (5.1.2)
+      actionpack (= 5.1.2)
+      activesupport (= 5.1.2)
+      method_source
+      rake (>= 0.8.7)
+      thor (>= 0.18.1, < 2.0)
     rainbow (2.1.0)
+    rake (12.0.0)
     rspec (3.4.0)
       rspec-core (~> 3.4.0)
       rspec-expectations (~> 3.4.0)
@@ -32,20 +120,37 @@ GEM
     rubocop-rspec (1.5.0)
       rubocop (>= 0.40.0)
     ruby-progressbar (1.8.1)
+    safe_yaml (1.0.4)
+    slop (3.6.0)
     thor (0.19.1)
+    thread_safe (0.3.6)
+    timecop (0.9.1)
+    tzinfo (1.2.3)
+      thread_safe (~> 0.1)
     unicode-display_width (1.0.5)
+    webmock (3.0.1)
+      addressable (>= 2.3.6)
+      crack (>= 0.3.2)
+      hashdiff
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  bamboozled
   bundler-audit
+  byebug
+  dotenv-rails
+  pry-rails
+  rewards-ruby!
   rspec
   rubocop
   rubocop-rspec
+  timecop
+  webmock
 
 RUBY VERSION
    ruby 2.3.1p112
 
 BUNDLED WITH
-   1.12.5
+   1.15.3
