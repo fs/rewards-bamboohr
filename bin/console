@@ -1,9 +1,8 @@
-#!/usr/bin/env ruby
+#!/usr/bin/env ruby -Ilib
 
 require "bundler/setup"
-
-# include here main library file
-# require "main-file"
+require "dotenv/load"
+require "rewards-bamboohr"
 
 require "irb"
 IRB.start
