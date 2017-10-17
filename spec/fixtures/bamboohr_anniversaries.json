@@ -1,17 +1,5 @@
 [
   {
-    "id":123,
-    "displayName":"John Doe",
-    "firstName":"John",
-    "lastName":"Doe",
-    "jobTitle":"Customer Service Representative",
-    "workPhone":"555-555-5555",
-    "workPhoneExtension":null,
-    "dateOfBirth":"1991-01-01",
-    "bestEmail":"john.doe@example.com",
-    "hireDate":"2017-01-01"
-  },
-  {
     "id":124,
     "displayName":"John Smith",
     "firstName":"John",

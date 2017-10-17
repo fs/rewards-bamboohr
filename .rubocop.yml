@@ -5,6 +5,7 @@ AllCops:
   DisplayCopNames: true
   Exclude:
     - bin/**/*
+    - vendor/**/*
 
 Rails:
   Enabled: false
@@ -34,6 +35,9 @@ Style/StringLiterals:
 
 Style/FrozenStringLiteralComment:
   Enabled: false
+
+Style/ParallelAssignment:
+    Enabled: false
 
 Style/MultilineMethodCallIndentation:
   EnforcedStyle: indented

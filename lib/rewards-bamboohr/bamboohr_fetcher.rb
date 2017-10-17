@@ -2,7 +2,7 @@ require "active_support/core_ext/time/calculations"
 require "bamboozled"
 
 module RewardsBamboohr
-  class BamboohrBirthdays
+  class BamboohrFetcher
     attr_reader :client
 
     def initialize(subdomain, api_key)
@@ -10,18 +10,20 @@ module RewardsBamboohr
     end
 
     def today_birthdays
-      birthday_people = []
-
-      employees.each do |employee|
-        birthday_people << employee if birthday_user?(employee["dateOfBirth"])
+      employees.each_with_object([]) do |employee, birthday_people|
+        birthday_people << employee if today?(employee["dateOfBirth"])
       end
+    end
 
-      birthday_people
+    def today_anniversaries
+      employees.each_with_object([]) do |employee, anniversary_people|
+        anniversary_people << employee if today?(employee["hireDate"])
+      end
     end
 
     private
 
-    def birthday_user?(date_string)
+    def today?(date_string)
       date = valid_date?(date_string)
       date && month_day(date) == month_day(Date.today)
     end
@@ -31,7 +33,7 @@ module RewardsBamboohr
     end
 
     def employees
-      client.employee.all(%w(dateOfBirth bestEmail))
+      client.employee.all(%w(dateOfBirth hireDate bestEmail))
     end
 
     def valid_date?(date_string)
