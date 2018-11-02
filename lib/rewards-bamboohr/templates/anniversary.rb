@@ -1,10 +1,10 @@
 module RewardsBamboohr
   module Templates
     class Anniversary < Base
-      DEFAULT_TEMPLATE = "+100 Happy %{number} Anniversary @%{username}".freeze
+      DEFAULT_TEMPLATE = "+100 Happy %<number>s Anniversary @%<username>s".freeze
 
       def generate
-        template % { username: username, number: anniversary_number }
+        format(template, username: username, number: anniversary_number)
       end
 
       private
@@ -15,7 +15,7 @@ module RewardsBamboohr
 
       def year(date)
         date.to_date.year
-      rescue
+      rescue ArgumentError
         Date.current.year
       end
 

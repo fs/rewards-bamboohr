@@ -33,12 +33,12 @@ module RewardsBamboohr
     end
 
     def employees
-      client.employee.all(%w(dateOfBirth hireDate bestEmail))
+      client.employee.all(%w[dateOfBirth hireDate bestEmail])
     end
 
     def valid_date?(date_string)
       Date.parse(date_string)
-    rescue
+    rescue ArgumentError
       false
     end
   end

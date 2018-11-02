@@ -25,19 +25,23 @@ module RewardsBamboohr
     def create_birthday_bonus
       birthdays = bamboohr_fetcher.today_birthdays
 
+      return unless birthdays
+
       Bonus.new(
         token: token,
         template: RewardsBamboohr::Templates::Birthday
-      ).create_bonuses(birthdays) if birthdays
+      ).create_bonuses(birthdays)
     end
 
     def create_anniversary_bonus
       anniversaries = bamboohr_fetcher.today_anniversaries
 
+      return unless anniversaries
+
       Bonus.new(
         token: token,
         template: RewardsBamboohr::Templates::Anniversary
-      ).create_bonuses(anniversaries) if anniversaries
+      ).create_bonuses(anniversaries)
     end
 
     private

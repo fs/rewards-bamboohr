@@ -13,7 +13,7 @@ Rails:
 RSpec/FilePath:
   Enabled: false
 
-Style/FileName:
+Naming/FileName:
   Enabled: false
 
 Style/Documentation:
@@ -39,20 +39,21 @@ Style/FrozenStringLiteralComment:
 Style/ParallelAssignment:
     Enabled: false
 
-Style/MultilineMethodCallIndentation:
+Layout/MultilineMethodCallIndentation:
   EnforcedStyle: indented
 
 Metrics/LineLength:
   Description: 'Limit lines to 120 characters.'
   Max: 120
 
-Lint/EndAlignment:
-  AlignWith: variable
-  SupportedStyles:
-    - keyword
-    - variable
+Metrics/BlockLength:
+  Exclude:
+    - spec/**/*
 
-Style/AlignParameters:
+Layout/EndAlignment:
+  EnforcedStyleAlignWith: variable
+
+Layout/AlignParameters:
   EnforcedStyle: with_fixed_indentation
   SupportedStyles:
     - with_first_parameter
