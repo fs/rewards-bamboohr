@@ -8,7 +8,7 @@ require "rewards"
 
 module RewardsBamboohr
   class Base
-    DEFAULT_BASE_URL = "http://rewards.flts.tk/api/v1".freeze
+    DEFAULT_BASE_URL = "http://rewards.flatstack.com/api/v1".freeze
 
     def self.create_birthday_bonus
       new.create_birthday_bonus
