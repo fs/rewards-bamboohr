@@ -19,10 +19,22 @@ describe RewardsBamboohr::Base do
       let(:template) { RewardsBamboohr::Templates::Birthday }
       let(:bamboohr_data) { bamboohr_birthdays }
 
-      it "creates bonuses" do
-        expect(bamboohr_fetcher_double).to receive(:today_birthdays) { bamboohr_data }
+      it "creates birthday bonuses" do
+        expect(bamboohr_fetcher_double)
+          .to receive(:today_birthdays) { bamboohr_data }
 
-        described_class.create_birthday_bonus
+        described_class.new.create_birthday_bonus
+      end
+
+      context "when certain email specified" do
+        let(:emails) { ["john.doe@example.com"] }
+
+        it "creates birthday bonuses" do
+          expect(bamboohr_fetcher_double)
+            .to receive(:by_emails).with(emails) { bamboohr_data }
+
+          described_class.new(emails).create_birthday_bonus
+        end
       end
     end
 
@@ -31,9 +43,10 @@ describe RewardsBamboohr::Base do
       let(:bamboohr_data) { bamboohr_anniversaries }
 
       it "creates anniversary bonuses" do
-        expect(bamboohr_fetcher_double).to receive(:today_anniversaries) { bamboohr_data }
+        expect(bamboohr_fetcher_double)
+          .to receive(:today_anniversaries) { bamboohr_data }
 
-        described_class.create_anniversary_bonus
+        described_class.new.create_anniversary_bonus
       end
     end
   end

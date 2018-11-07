@@ -34,6 +34,15 @@ heroku config:set REWARDS_BOT_PASSWORD=
 heroku config:set REWARDS_TEMPLATE="+1000 Happy Birthday @%{username}"
 ```
 
+## Usage
+
+```
+# Give bonuses to certain people
+emails = %w[john.smith@example.com john.doe@example.com]
+RewardsBamboohr::Base.new(emails).create_birthday_bonus
+RewardsBamboohr::Base.new(emails).create_anniversary_bonus
+```
+
 ## Quality tools
 
 * `bin/quality` based on [RuboCop](https://github.com/bbatsov/rubocop)

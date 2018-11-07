@@ -21,6 +21,12 @@ module RewardsBamboohr
       end
     end
 
+    def by_emails(emails)
+      employees.each_with_object([]) do |employee, people|
+        people << employee if emails.include?(employee["bestEmail"])
+      end
+    end
+
     private
 
     def today?(date_string)

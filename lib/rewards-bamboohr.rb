@@ -10,20 +10,16 @@ module RewardsBamboohr
   class Base
     DEFAULT_BASE_URL = "http://rewards.flatstack.com/api/v1".freeze
 
-    def self.create_birthday_bonus
-      new.create_birthday_bonus
-    end
+    attr_reader :emails
 
-    def self.create_anniversary_bonus
-      new.create_anniversary_bonus
-    end
+    def initialize(emails = nil)
+      @emails = emails
 
-    def initialize
       Rewards::Client.base_uri(base_uri)
     end
 
     def create_birthday_bonus
-      birthdays = bamboohr_fetcher.today_birthdays
+      birthdays = fetch_people("birthdays")
 
       return unless birthdays
 
@@ -34,7 +30,7 @@ module RewardsBamboohr
     end
 
     def create_anniversary_bonus
-      anniversaries = bamboohr_fetcher.today_anniversaries
+      anniversaries = fetch_people("anniversaries")
 
       return unless anniversaries
 
@@ -45,6 +41,12 @@ module RewardsBamboohr
     end
 
     private
+
+    def fetch_people(event)
+      return bamboohr_fetcher.by_emails(emails) if emails.present?
+
+      bamboohr_fetcher.public_send("today_#{event}")
+    end
 
     def bamboohr_fetcher
       BamboohrFetcher.new(
