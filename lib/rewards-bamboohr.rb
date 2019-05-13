@@ -8,7 +8,7 @@ require "rewards"
 
 module RewardsBamboohr
   class Base
-    DEFAULT_BASE_URL = "http://rewards.flatstack.com/api/v1".freeze
+    DEFAULT_BASE_URL = "http://rewards.team/api/v1".freeze
 
     attr_reader :emails
 
